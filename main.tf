@@ -1,8 +1,5 @@
-
-#Creating 2 public subnets and 1 private subnet 
-
 resource "aws_vpc" "kobo" {
-  cidr_block       = "10.0.0.0/16"
+  cidr_block       = var.cidr_block
   instance_tenancy = "default"
 
   tags = {
@@ -12,7 +9,7 @@ resource "aws_vpc" "kobo" {
 
 resource "aws_subnet" "kobo_publicsub1" {
   vpc_id     = aws_vpc.kobo.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.public-sub-1-cidr_block
 
   tags = {
     Name = "kobo_publicsub1"
@@ -21,7 +18,7 @@ resource "aws_subnet" "kobo_publicsub1" {
 
 resource "aws_subnet" "kobo_publicsub2" {
   vpc_id     = aws_vpc.kobo.id
-  cidr_block = "10.0.2.0/24"
+  cidr_block = var.public-sub-2-cidr_block
 
   tags = {
     Name = "kobo_publicsub2"
@@ -30,7 +27,7 @@ resource "aws_subnet" "kobo_publicsub2" {
 
 resource "aws_subnet" "kobo_privatesub1" {
   vpc_id     = aws_vpc.kobo.id
-  cidr_block = "10.0.3.0/24"
+  cidr_block = var.private-sub-1-cidr_block
 
   tags = {
     Name = "kobo_privatesub1"
