@@ -78,3 +78,4 @@ resource "aws_route" "public_IGW_route" {
   route_table_id            = aws_route_table.kobo_pub_route_table.id
   destination_cidr_block    = "0.0.0.0/0"
   gateway_id                = aws_internet_gateway.kobo_IGW.id
+}
