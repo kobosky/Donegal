@@ -16,8 +16,9 @@ variable "public-sub-1-cidr_block" {
 variable "public-sub-2-cidr_block" {
   default = "10.0.2.0/24"
   description = "public-sub-2 Cidr"
-
+}
 
 variable "private-sub-1-cidr_block" {
   default = "10.0.3.0/24"
   description = "private sub-1 Cidr"
+}
